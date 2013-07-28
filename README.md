@@ -1,3 +1,4 @@
+Forked from grunt-rev, WIP to also have it update a file with the new filenames.
 # grunt-rev [![Build Status](https://travis-ci.org/cbas/grunt-rev.png)](https://travis-ci.org/cbas/grunt-rev)
 
 > Static file asset revisioning through content hashing
