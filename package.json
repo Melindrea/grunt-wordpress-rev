@@ -3,11 +3,7 @@
   "description": "Static file asset revisioning through content hashing and updating a specified file",
   "version": "0.1.0",
   "homepage": "https://github.com/cbas/grunt-Melindrea/grunt-wordpress-rev",
-  "author": {
-    "name": "Marie Hogebrandt",
-    "email": "iam@mariehogebrandt.se",
-    "url": "http://mariehogebrandt.se"
-  },
+  "author": "Marie Hogebrandt <iam@mariehogebrandt.se> (http://mariehogebrandt.se)",
   "repository": {
     "type": "git",
     "url": "git://github.com/Melindrea/grunt-wordpress-rev.git"
@@ -36,6 +32,17 @@
     "grunt": "0.4.0rc6"
   },
   "keywords": [
-    "gruntplugin", "revision"
-  ]
+    "gruntplugin",
+    "revision"
+  ],
+  "readmeFilename": "README.md",
+  "gitHead": "27db6b0d81092ecd60f60d7395b5ee35c744af5c",
+  "dependencies": {
+    "grunt-contrib-clean": "~0.4.0rc6",
+    "grunt-contrib-copy": "~0.4.0",
+    "grunt-contrib-jshint": "~0.1.1rc6",
+    "grunt": "~0.4.0rc6",
+    "grunt-contrib-nodeunit": "~0.1.2rc6"
+  },
+  "license": "MIT"
 }
