@@ -46,10 +46,9 @@ module.exports = function (grunt) {
                     renamed = [prefix, filename].join('.');
                 }
                 var outPath = path.resolve(path.dirname(f), renamed),
-                regex = new RegExp('([0-9a-f]*\\.)*?' + filename),
-                content = grunt.file.read(options.file);
+                regex = new RegExp(filename), content = grunt.file.read(options.file);
 
-                content = content.replace(regex, prefix + '.' + filename.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&'), 'g');
+                content = content.replace(regex, prefix + '.' + filename);
                 grunt.verbose.ok().ok(hash);
                 fs.renameSync(f, outPath);
                 grunt.log.write(f + ' ').ok(renamed);
