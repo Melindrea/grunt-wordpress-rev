@@ -90,6 +90,10 @@ The number of characters of the file content hash to prefix the file name with.
 #### options.file
 Type: `String`
 
+#### options.revert
+Type: `Bool`
+Default value: false
+
 ### Usage Examples
 
 #### Basic Asset Revving
@@ -125,6 +129,25 @@ grunt.initConfig({
   }
 })
 ```
+#### Reverting filenames
+Setting the `revert` option to `true` will generate the new files reverting the hash with the file name. Use this option if you want to generate files like main.min.50a592.css instead of 50a592.main.min.css
+```js
+grunt.initConfig({
+  rev: {
+    options: {
+      revert: true,
+      file: 'header.php'
+    },
+    files: {
+      src: [
+        'js/**/*.js',
+        'css/**/*.css'
+        ]
+    }
+  },
+})
+```
+
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Lint your code using [grunt][].
