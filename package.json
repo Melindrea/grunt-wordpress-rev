@@ -1,7 +1,7 @@
 {
   "name": "grunt-wordpress-rev",
   "description": "Static file asset revisioning through content hashing and updating a specified file",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/cbas/grunt-Melindrea/grunt-wordpress-rev",
   "author": "Marie Hogebrandt <iam@mariehogebrandt.se> (http://mariehogebrandt.se)",
   "repository": {
