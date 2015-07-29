@@ -39,7 +39,7 @@ module.exports = function (grunt) {
                 ext = path.extname(filename),
                 baseName = path.basename(filename, ext),
                 renamed;
-                if ( options.revert ) {
+                if (options.revert) {
                     renamed = [baseName, prefix, ext.slice(1)].join('.');
                 }
                 else {
