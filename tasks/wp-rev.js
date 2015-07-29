@@ -26,6 +26,7 @@ module.exports = function (grunt) {
         var options = this.options({
             algorithm: 'md5',
             length: 8,
+            revert: false,
             file: ''
         });
 
@@ -35,12 +36,19 @@ module.exports = function (grunt) {
                 var hash = md5(f, options.algorithm, 'hex'),
                 prefix = hash.slice(0, options.length),
                 filename = path.basename(f),
-                renamed = [prefix, filename].join('.'),
-                outPath = path.resolve(path.dirname(f), renamed),
-                regex = new RegExp('([0-9a-f]*\\.)*?' + filename),
+                ext = path.extname(filename),
+                baseName = path.basename(filename, ext),
+                renamed;
+                if (options.revert) {
+                    renamed = [baseName, prefix, ext.slice(1)].join('.');
+                }
+                else {
+                    renamed = [prefix, filename].join('.');
+                }
+                var outPath = path.resolve(path.dirname(f), renamed),
                 content = grunt.file.read(options.file);
 
-                content = content.replace(regex, prefix + '.' + filename.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&'), 'g');
+                content = content.replace(filename, renamed);
                 grunt.verbose.ok().ok(hash);
                 fs.renameSync(f, outPath);
                 grunt.log.write(f + ' ').ok(renamed);
