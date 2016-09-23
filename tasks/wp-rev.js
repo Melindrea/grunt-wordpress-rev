@@ -48,7 +48,7 @@ module.exports = function (grunt) {
                 var outPath = path.resolve(path.dirname(f), renamed),
                 content = grunt.file.read(options.file);
 
-                content = content.replace(filename, renamed);
+                content = content.replace(new RegExp('([0-9a-f]*\\.)*?' + filename), renamed);
                 grunt.verbose.ok().ok(hash);
                 fs.renameSync(f, outPath);
                 grunt.log.write(f + ' ').ok(renamed);
